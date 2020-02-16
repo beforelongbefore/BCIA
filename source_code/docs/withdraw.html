@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>buy ticket</title>
+</head>
+<body>
+<h2> 是否确定退票？</h2>
+
+<form action="/withdraw/{{ ticket_id }}" method=post>
+<input type="radio" name="choice" value=0 checked>否
+<br>
+<input type="radio" name="choice" value=1 >是
+
+    <input type=submit value="提交">
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>buy ticket</title>
+</head>
+<body>
+<h2> 请选择方向和日期：</h2>
+
+<form action="{{ url_for('buysuccesspage') }}" method=post>
+<input type="radio" name="direction" value=0 checked>从机场到{{ station }}
+<br>
+<input type="radio" name="direction" value=1 >从{{station}}到机场
+    <br>
+    <select name="month">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+        <option value=9>9</option>
+        <option value=10>10</option>
+        <option value=11>11</option>
+        <option value=12>12</option>
+
+    </select>月
+    <select name="day">
+        {% for i in range(31) %}
+        <option value={{ i+1 }}>{{ i+1 }}</option>
+        {% endfor %}
+
+
+    </select>日
+    <input type=submit value="确认购买">
+</form>
+
+
+</body>
+</html>
